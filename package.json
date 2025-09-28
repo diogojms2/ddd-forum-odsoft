@@ -26,8 +26,13 @@
     "testWithCoverage": "jest --coverage --coverageReporters=\"text\" --coverageReporters=\"html\" --coverageReporters=\"json\"",
     "test:api": "npm run db:delete:dev && npm run db:create:dev && npm run migrate:dev && jest --coverage --coverageReporters=\"html\" --runInBand --testPathPattern=api",
     "docs": "jsdoc -r src -d docs",
-    "docker:up": "docker-compose up -d",
-    "docker:down": "docker-compose down"
+    "docker-up": "docker-compose up -d",
+    "docker-down": "docker-compose down",
+    "unitTests": "npm run test",
+    "generateUnitTestsCoverageReport": "npm run testWithCoverage",
+    "apiTests": "npm run test:api",
+    "generateAPITestsCoverageReport": "npm run test:api",
+    "allTests": "npm run generateAPITestsCoverageReport && npm run generateUnitTestsCoverageReport"
   },
   "husky": {
     "hooks": {

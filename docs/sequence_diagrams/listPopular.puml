@@ -1,0 +1,23 @@
+@startuml
+
+title GET popular posts
+
+actor "User" as User
+participant ":Rest" as Rest
+participant "PostsController" as Controller
+participant "PostsService" as Service
+participant "PostsRepository" as Repository
+
+activate User
+
+User -> Rest: requests popular posts
+Rest -> Controller: getPopularPosts()
+
+Controller -> Service: getPopularPosts()
+Service -> Repository: getPopularPosts()
+Repository --> Service: List<Post> or error
+Service --> Controller: List<Post> or error
+Controller --> Rest: List<Post> or error
+Rest --> User: get popular posts or error
+
+@enduml

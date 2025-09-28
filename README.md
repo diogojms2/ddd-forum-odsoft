@@ -133,6 +133,16 @@ Examples of using the API (without authentication, using postman)
 
   To run tests type: npm run test
 
+  You can also run test through: 
+  - npm run testDev
+  - npm run testWithCoverage
+  - npm run testApi
+
+  npm run test -> Runs all unit tests (only runs once)
+  npm run testDev -> Runs all unit tests in watch mode (keeps running while changes are made)
+  npm run testWithCoverage -> Runs all unit tests with coverage
+  npm run testApi -> Runs all API tests
+
   Existing unit tests:
   - src/shared/core/Guard.spec.ts
   - src/modules/forum/domain/postSlug.spec.ts
